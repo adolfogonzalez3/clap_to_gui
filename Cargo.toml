@@ -14,6 +14,7 @@ name = "example"
 path = "src/main.rs"
 
 [dependencies]
-iui = "0.3.0"
+# iui = "0.3.0"
+iui = { git = "https://github.com/xobs/libui-rs.git", branch = "remove-cmake-dep"}
 clap = {version = "2.33.0", features = ["yaml"]}
 yaml-rust = "0.3.5"
