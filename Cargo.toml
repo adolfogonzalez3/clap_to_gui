@@ -1,0 +1,19 @@
+[package]
+name = "clap_to_gui"
+version = "0.1.0"
+authors = ["Adolfo Gonzalez III <adolfo.gonzalez02@utrgv.edu>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "example"
+path = "src/main.rs"
+
+[dependencies]
+iui = "0.3.0"
+clap = {version = "2.33.0", features = ["yaml"]}
+yaml-rust = "0.3.5"

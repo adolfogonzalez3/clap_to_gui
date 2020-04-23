@@ -1,0 +1,15 @@
+name: verify
+version: "0.1.0"
+author: Adolfo Gonzalez III
+about: Verifies your program against the baseline version.
+args:
+    - program:
+        help: The path to your program.
+        required: true
+        index: 2
+    - baseline:
+        help: The path to the baseline program.
+        required: true
+        index: 1
+    - strict:
+        help: If set then check if both the baseline and your submission are strictly similar.
