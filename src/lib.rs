@@ -50,9 +50,11 @@ pub fn run_gui<F: FnMut(clap::ArgMatches)>(docs: &Yaml, mut f: F) {
                 .map(|(_, x)| x)
                 .collect::<Vec<String>>();
             println!("{}", cmdline.join(" "));
-            let matches = App::from(docs).get_matches_from(cmdline);
-            println!("{:?}", matches);
-            f(matches);
+            let matches_result = App::from(docs).get_matches_from_safe(cmdline);
+            println!("{:?}", matches_result);
+            if let Ok(matches) = matches_result {
+                f(matches);
+            }
         }
     });
 
